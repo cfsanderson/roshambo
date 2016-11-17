@@ -12,6 +12,18 @@ body {
   color: hsl(200, 5%, 25%);
 }
 
+header {
+  margin-bottom: 5em;
+}
+
+h1 {
+  margin: 1em;
+}
+
+h3 {
+  margin-top: -1em;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -24,6 +36,11 @@ main {
 section {
   display: flex;
   align-items: center;
+}
+
+h2 {
+  font-variant-caps: all-small-caps;
+  align-self: baseline;
 }
 
 figure {
@@ -67,12 +84,28 @@ figure.draw img {
   filter: drop-shadow(0 0 5px hsl(0, 0%, 50%));
 }
 
+.scoreboard {
+  display: flex;
+  align-items: center;
+  margin: 5em;
+}
+
 .scores {
   font-size: 5vw;
   display: flex;
 }
 
 .scores span {
+  font-size: 5vw;
+  display: block;
+}
+
+.matches {
+  font-size: 5vw;
+  display: flex;
+}
+
+.matches span {
   font-size: 5vw;
   display: block;
 }

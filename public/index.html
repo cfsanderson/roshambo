@@ -9,23 +9,34 @@
   </head>
   <body>
     <main>
-      <h1>Ro! Sham! Bo!</h1>
+      <header>
+        <h1>Ro! Sham! Bo!</h1>
+        <h3>Choose your weapon wisely.</h3>
+      </header>
       <section>
         <figure class="player">
           <figcaption>Player</figcaption>
           <img src="/images/unknown.svg" alt="Player Move" height="200" width="200">
         </figure>
-        <div class="scores">
-          <span class="player">0</span>
-          :
-          <span class="computer">0</span>
-        </div>
         <figure class="computer">
           <figcaption>Computer</figcaption>
           <img src="/images/unknown.svg" alt="Computer Move" height="200" width="200">
         </figure>
       </section>
-      <p>Choose your weapon wisely.</p>
+      <div class="scoreboard">
+        <h2>Bout Score</h2>
+        <div class="scores">
+          <span class="player">0</span>
+          :
+          <span class="computer">0</span>
+        </div>
+        <h2>Match Score</h2>
+        <div class="matches">
+          <span class="player">0</span>
+          :
+          <span class="computer">0</span>
+        </div>
+      </div>
       <ul class="player-input">
         <li><button class="rock">Rock</button></li>
         <li><button class="paper">Paper</button></li>
