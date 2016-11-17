@@ -18,15 +18,19 @@ const handleButtonClick = (event) => {
     const computerScore = parseInt(computerScoreText)
     const newComputerScore = computerScore + 1
     $('.scores .computer').textContent = newComputerScore
+    $('figure.player').className = 'player lose'
+    $('figure.computer').className = 'computer win'
     setTimeout(() => $('.message').textContent = `the COMPUTER wins`, 500)
-    setTimeout(() => $('.message').textContent = `Let's Play!`, 2000)
+    // setTimeout(() => $('.message').textContent = `Let's Play!`, 2000)
   }
 
 // if it's a draw
 
   if (player === 'rock' && computer === 'rock' || player === 'paper' && computer === 'paper' || player === 'scissors' && computer === 'scissors') {
     setTimeout(() => $('.message').textContent = `It\'s a draw.`, 500)
-    setTimeout(() => $('.message').textContent = `Let's Play!`, 2000)
+    $('figure.player').className = 'player draw'
+    $('figure.computer').className = 'computer draw'
+  // setTimeout(() => $('.message').textContent = `Let's Play!`, 2000)
   }
 
 // if the player wins
@@ -36,8 +40,10 @@ const handleButtonClick = (event) => {
     const playerScore = parseInt(playerScoreText)
     const newPlayerScore = playerScore + 1
     $('.scores .player').textContent = newPlayerScore
+    $('figure.player').className = 'player win'
+    $('figure.computer').className = 'computer lose'
     setTimeout(() => $('.message').textContent = `the PLAYER wins`, 500)
-    setTimeout(() => $('.message').textContent = `Let's Play!`, 2000)
+    // setTimeout(() => $('.message').textContent = `Let's Play!`, 2000)
   }
 
 // Check the bout score
@@ -120,6 +126,11 @@ const resetGame = () => {
   }
   $('figure.player img').src = '/images/unknown.svg'
   $('figure.computer img').src = '/images/unknown.svg'
+  $('figure.player').className = 'player'
+  $('figure.computer').className = 'computer'
+
+  $('.message').textContent = `Let\'s Play!`
+
   $('body').className = 'main'
 }
 
