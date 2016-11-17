@@ -11,52 +11,57 @@ const handleButtonClick = (event) => {
   console.log('PLAYER IS', player)
   console.log('COMPUTER IS', computer)
 
-// computer wins
+// if the computer wins
+
   if (player === 'rock' && computer === 'paper' || player === 'paper' && computer === 'scissors' || player === 'scissors' && computer === 'rock') {
     const computerScoreText = $('.scores .computer').textContent
     const computerScore = parseInt(computerScoreText)
     const newComputerScore = computerScore + 1
     $('.scores .computer').textContent = newComputerScore
-    console.log('computer wins with score', newComputerScore)
+    setTimeout(() => $('.message').textContent = `the COMPUTER wins`, 500)
+    setTimeout(() => $('.message').textContent = `Let's Play!`, 2000)
   }
 
-// draw
+// if it's a draw
+
   if (player === 'rock' && computer === 'rock' || player === 'paper' && computer === 'paper' || player === 'scissors' && computer === 'scissors') {
-    console.log('It\'s a draw')
+    setTimeout(() => $('.message').textContent = `It\'s a draw.`, 500)
+    setTimeout(() => $('.message').textContent = `Let's Play!`, 2000)
   }
 
-// player wins
+// if the player wins
+
   if (player === 'rock' && computer === 'scissors' || player === 'paper' && computer === 'rock' || player === 'scissors' && computer === 'paper') {
-    // Get the player score as text
     const playerScoreText = $('.scores .player').textContent
-    // Convert that to a number
     const playerScore = parseInt(playerScoreText)
-    // Add one to it
     const newPlayerScore = playerScore + 1
-    // Put it back on screen
     $('.scores .player').textContent = newPlayerScore
-    console.log('player wins with score', newPlayerScore)
+    setTimeout(() => $('.message').textContent = `the PLAYER wins`, 500)
+    setTimeout(() => $('.message').textContent = `Let's Play!`, 2000)
   }
 
-/* Next, check to see if either score is 2 and if so call gameOver */
+// Check the bout score
 
   if ($('.scores .computer').textContent === '2') {
     console.log('computer wins')
-    gameOver(false)
+    setTimeout(() => gameOver(false), 1500)
   }
 
   if ($('.scores .player').textContent === '2') {
     console.log('player wins')
-    gameOver(true)
+    setTimeout(() => gameOver(true), 1500)
   }
 }
+
+// the computers' move
 
 const getComputerMove = () => {
   const moves = ['rock', 'paper', 'scissors']
   return moves[Math.floor(Math.random() * moves.length)]
 }
 
-// HINT: Try calling `gameOver(true)` in the console.
+// bout OVER
+
 const gameOver = (playerDidWin) => {
   if (playerDidWin) {
     $('.dialog h3').textContent = 'You won the bout!'
@@ -76,6 +81,8 @@ const gameOver = (playerDidWin) => {
 
   $('body').className = 'modal'
 
+// check the match score
+
   if ($('.matches .computer').textContent === '2') {
     console.log('computer wins the match')
     matchOver(false)
@@ -86,6 +93,8 @@ const gameOver = (playerDidWin) => {
     matchOver(true)
   }
 }
+
+// match over
 
 const matchOver = (playerDidWin) => {
   if (playerDidWin) {
@@ -99,11 +108,16 @@ const matchOver = (playerDidWin) => {
 }
 
 const resetGame = () => {
-  // TODO: Probably need to do more to reset the game here...
   $('.scores .computer').textContent = 0
   $('.scores .player').textContent = 0
-  // $('.matches .computer').textContent = 0
-  // $('.matches .player').textContent = 0
+  const computerMatches = parseInt($('.matches .computer').textContent)
+  const playerMatches = parseInt($('.matches .player').textContent)
+
+  // Reset the matches if we won 2-out-of-3 matches
+  if (computerMatches >= 2 || playerMatches >= 2) {
+    $('.matches .computer').textContent = 0
+    $('.matches .player').textContent = 0
+  }
   $('figure.player img').src = '/images/unknown.svg'
   $('figure.computer img').src = '/images/unknown.svg'
   $('body').className = 'main'
@@ -125,3 +139,4 @@ document.addEventListener('DOMContentLoaded', main)
 //   $('.caleb .mindset').textContent = mindsetChange
 // }
 //
+// setTimeout(() => gameOver(false), 1500)
