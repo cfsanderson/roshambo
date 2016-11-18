@@ -18,26 +18,26 @@
           <figcaption>Player</figcaption>
           <img src="/images/unknown.svg" alt="Player Move" height="200" width="200">
         </figure>
+        <div class="scoreboard">
+          <h2>Bout</h2>
+          <div class="scores">
+            <span class="player">0</span>
+            :
+            <span class="computer">0</span>
+          </div>
+          <h2>Match</h2>
+          <div class="matches">
+            <span class="player">0</span>
+            :
+            <span class="computer">0</span>
+          </div>
+        </div>
         <figure class="computer">
           <figcaption>Computer</figcaption>
           <img src="/images/unknown.svg" alt="Computer Move" height="200" width="200">
         </figure>
       </section>
-      <p class="message">Lets Play!</p>
-      <div class="scoreboard">
-        <h2>Bout Score</h2>
-        <div class="scores">
-          <span class="player">0</span>
-          :
-          <span class="computer">0</span>
-        </div>
-        <h2>Match Score</h2>
-        <div class="matches">
-          <span class="player">0</span>
-          :
-          <span class="computer">0</span>
-        </div>
-      </div>
+      <h4 class="message">Lets Play!</h4>
       <ul class="player-input">
         <li><button class="rock">Rock</button></li>
         <li><button class="paper">Paper</button></li>
@@ -47,9 +47,27 @@
     <div class="overlay">
       <div class="dialog">
         <h3>!!!</h3>
+        <p class="player-scoreboard">Player:</p>
+        <p class="computer-scoreboard">Computer:</p>
         <button>Play Again</button>
       </div>
     </div>
     <script src="/main.js" charset="utf-8"></script>
   </body>
+  <!-- <div class="scoreboard">
+    <h2>Bout Score</h2>
+    <div class="scores">
+      <span class="player">0</span>
+      :
+      <span class="computer">0</span>
+    </div>
+    <h2>Match Score</h2>
+    <div class="matches">
+      <span class="player">0</span>
+      :
+      <span class="computer">0</span>
+    </div>
+    <p class="message">Lets Play!</p>
+  </div> -->
+
 </html>

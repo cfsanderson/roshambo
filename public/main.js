@@ -50,12 +50,12 @@ const handleButtonClick = (event) => {
 
   if ($('.scores .computer').textContent === '2') {
     console.log('computer wins')
-    setTimeout(() => gameOver(false), 1500)
+    setTimeout(() => gameOver(false), 500)
   }
 
   if ($('.scores .player').textContent === '2') {
     console.log('player wins')
-    setTimeout(() => gameOver(true), 1500)
+    setTimeout(() => gameOver(true), 500)
   }
 }
 
@@ -71,6 +71,8 @@ const getComputerMove = () => {
 const gameOver = (playerDidWin) => {
   if (playerDidWin) {
     $('.dialog h3').textContent = 'You won the bout!'
+    $('.dialog .player-scoreboard').textContent = 'Player Score: ' + $('.scores .player').textContent
+    $('.dialog .computer-scoreboard').textContent = 'Computer Score: ' + $('.scores .computer').textContent
     $('.dialog button').textContent = 'Continue'
     previousMatchScore = $('.matches .player').textContent
     matchScore = parseInt(previousMatchScore)
@@ -78,6 +80,8 @@ const gameOver = (playerDidWin) => {
     $('.matches .player').textContent = newMatchScore
   } else {
     $('.dialog h3').textContent = 'You lost the bout!'
+    $('.dialog .player-scoreboard').textContent = 'Player Bout Score: ' + $('.scores .player').textContent
+    $('.dialog .computer-scoreboard').textContent = 'Computer Bout Score: ' + $('.scores .computer').textContent
     $('.dialog button').textContent = 'Continue'
     previousMatchScore = $('.matches .computer').textContent
     matchScore = parseInt(previousMatchScore)
@@ -105,9 +109,13 @@ const gameOver = (playerDidWin) => {
 const matchOver = (playerDidWin) => {
   if (playerDidWin) {
     $('.dialog h3').textContent = 'You won the MATCH!'
+    $('.dialog .player-scoreboard').textContent = 'Player Match Score: ' + $('.matches .player').textContent
+    $('.dialog .computer-scoreboard').textContent = 'Computer Match Score: ' + $('.matches .computer').textContent
     $('.dialog button').textContent = 'Play Again?'
   } else {
     $('.dialog h3').textContent = 'You lost the match.'
+    $('.dialog .player-scoreboard').textContent = 'Player Match Score: ' + $('.matches .player').textContent
+    $('.dialog .computer-scoreboard').textContent = 'Computer Match Score: ' + $('.matches .computer').textContent
     $('.dialog button').textContent = 'Play Again?'
   }
   $('body').className = 'modal'
@@ -149,5 +157,3 @@ document.addEventListener('DOMContentLoaded', main)
 //   const mindsetChange = 'growth mindset'
 //   $('.caleb .mindset').textContent = mindsetChange
 // }
-//
-// setTimeout(() => gameOver(false), 1500)
