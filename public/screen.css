@@ -6,7 +6,7 @@ html {
 
 body {
   background-image: url(./images/bamboo.png);
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: repeat-y;
   margin: 0;
@@ -33,30 +33,35 @@ header {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: calc((100vw + 100vh) / 2);
-  height: calc((100vw + 100vh) / 2);
+  margin: 10px, 0, 200px;
+  width: calc(80vw);
+  height: calc(20vh);
   max-width: 800px;
-  max-height: 100vw;
-  padding-bottom: 10px;
-  /*margin: -10em, 0em, 1em, 0em;*/
+  max-height: 200px;
+  padding: 10px;
   text-align: center;
+
   /*align-content: center;*/
 }
 
 h1 {
   color: hsl(61, 79%, 51%);
   font-variant: small-caps;
-  font-size: 12vw;
-  /*font-size-adjust:*/
   text-shadow: 0.05em 0.05em 0.07em hsla(101, 16%, 15%, 0.7);
   -webkit-text-stroke: 1px hsla(101, 16%, 15%, 0.2);
+  margin: 0;
+  /*font-size: 10vh;
+  font-size: 10vw;*/
+  font-size: 10vw;
 }
 
 h3 {
-  margin-top: -7em;
-  margin-bottom: 1em;
+  /*margin-top: -7em;
+  margin-bottom: 1em;*/
   color: hsl(91, 26%, 14%);
   text-align: center;
+  margin-top: -1em;
+  font-size: 4vw;
 }
 
 section {
@@ -76,13 +81,12 @@ figure {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: calc((33vw + 33vh) / 2);
-  height: calc((33vw + 33vh) / 2);
+  width: calc((33vw + 33vh) / 3);
+  height: calc((33vw + 33vh) / 3);
   max-width: 33vw;
   max-height: 33vw;
   padding-bottom: 10px;
-  /*background-color: hsl(200, 33%, 85%);*/
-  background-color: hsla(71, 62%, 74%, 0.91);
+  background-color: hsla(71, 62%, 74%, 1);
   border-width: 0.25em;
   border-color: hsla(70, 84%, 7%, 0.5);
   border-radius: 0.25em;
@@ -139,11 +143,12 @@ figure {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: calc((15vw + 15vh) / 3);
-  height: calc((15vw + 15vh) / 3);
   max-width: 15vw;
   max-height: 15vw;
-  padding-bottom: 10px;
+}
+
+.scoreboard section {
+  margin: 1em 0;  
 }
 
 h2 {
@@ -174,14 +179,15 @@ h2 {
   display: block;
 }
 
-.scores span.player {
+/*.scores span.player {
   text-align: right;
-}
+}*/
 
 .player-input {
   padding-left: 0;
   list-style: none;
   display: flex;
+  margin: 0;
 }
 
 .player-input li {
